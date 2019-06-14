@@ -69,6 +69,7 @@
         if (e.propertyName !== "transform") return; //skip it if it's not a transform
         //'this' is always equal to what is called against it. In this case it's equal to the key because 'addEventListener' was called against the 'key': key.addEventListener
         this.classList.remove("playing");
+        console.log(e);
       }
 
       const keys = document.querySelectorAll(".key");
