@@ -86,7 +86,7 @@
         transform: translateY(-100%);
       }
       .panel.open-active > *:first-child {
-        transform: translateY(-100%);
+        transform: translateY(0);
       }
 
       .panel > *:last-child {
@@ -94,7 +94,7 @@
       }
 
       .panel.open-active > *:last-child {
-        transform: translateY(100%);
+        transform: translateY(0);
       }
 
       .panel p {
@@ -146,7 +146,9 @@
       const panels = document.querySelectorAll(".panel");
 
       function toggleOpen() {
+        console.log("hello");
         this.classList.toggle("open");
+        console.log(this);
       }
 
       function toggleActive(e) {
@@ -158,7 +160,7 @@
 
       panels.forEach(panel => panel.addEventListener("click", toggleOpen));
       panels.forEach(panel =>
-        panel.addEventListener("transitioned", toggleActive)
+        panel.addEventListener("transitionend", toggleActive)
       );
     </script>
   </body>
